@@ -28,5 +28,16 @@ namespace UdemyExpressoAPI.Controllers
             return Ok(menus);
 
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetMenuItem(int id)
+        {
+            var menuItem = _expressoDbContext.Menus.Include("SubMenus").FirstOrDefault(m=>m.Id==id);
+            if (menuItem == null)
+            {
+                return NotFound();
+            }
+            return Ok(menuItem);
+        }
     }
 }
