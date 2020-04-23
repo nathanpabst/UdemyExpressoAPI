@@ -14,7 +14,7 @@ namespace UdemyExpressoAPI.Models
         public string Name { get; set; }
 
         [Required]
-        [RegularExpression(@"^([\w\.\-] +)@([\w\-] +)((\.(\w){2, 3})+)$")]
+        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$")]
         public string Email { get; set; }
 
         [Required]

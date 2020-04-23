@@ -29,7 +29,7 @@ namespace UdemyExpressoAPI
         {
             services.AddDbContext<ExpressoDbContext>(options => options.UseSqlServer(@"Server=.; Initial Catalog=ExpressoDb;Trusted_Connection=True;"));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
